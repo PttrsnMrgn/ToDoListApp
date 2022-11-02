@@ -3,7 +3,7 @@
 <div *ngFor="let toDo of toDoList; index as i">
     <p>{{ i + 1 }}. {{toDo.task}}</p>
     <p *ngIf="toDo.completed">item completed</p>
-    <button (click)="completeTask(toDo)">Mark Complete</button>
+    <button *ngIf="!toDo.completed"(click)="completeTask(toDo)">Mark Complete</button>
     <button (click)="incompleteTask(toDo)">Mark Incomplete</button>
     <button (click)="removeTask(i)">Remove Task</button>
     <hr>
